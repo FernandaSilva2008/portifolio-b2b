@@ -1,0 +1,339 @@
+/* ===================================================
+   TESTIMONIALS SECTION
+   Mobile First
+=================================================== */
+
+.testimonials {
+  width: 100%;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+
+  background-color: var(--purple-900, #581c87);
+
+  overflow: hidden;
+}
+
+.testimonials-container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===================================================
+   HEADER
+=================================================== */
+
+.testimonials-header {
+  width: 100%;
+  max-width: 60rem;
+  margin-bottom: 4rem;
+  padding: 0 2rem;
+
+  text-align: center;
+}
+
+.testimonials-title {
+  margin: 0 0 1.2rem;
+
+  color: var(--white, #fff);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.testimonials-title .purple-highlight {
+  display: block;
+
+  color: var(--purple-400, #c084fc);
+}
+
+.testimonials-subtitle {
+  color: var(--white, #fff);
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+/* ===================================================
+   CAROUSEL
+=================================================== */
+
+.testimonials-carousel-wrapper {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.testimonials-cards {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding: 3rem 0;
+
+  overflow-x: auto;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.testimonials-cards::-webkit-scrollbar {
+  display: none;
+}
+
+/*
+  Espaçamento lateral para permitir que
+  o primeiro e último card cheguem ao centro.
+*/
+.testimonials-cards::before,
+.testimonials-cards::after {
+  content: "";
+
+  flex: 0 0 calc(50vw - 16rem);
+}
+
+/* ===================================================
+   TESTIMONIAL CARD
+=================================================== */
+
+.testimonial-card {
+  flex: 0 0 30rem;
+  min-height: 32rem;
+
+  padding: 3.2rem 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: var(--blue-gray-100, #f1f5f9);
+  border-radius: 2rem;
+
+  scroll-snap-align: center;
+
+  opacity: 0.55;
+  transform: scale(0.9);
+
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* ===================================================
+   ACTIVE CARD
+=================================================== */
+
+.testimonial-card.active {
+  z-index: 2;
+
+  opacity: 1;
+  transform: scale(1.08);
+
+  box-shadow: 0 2rem 3.5rem -0.8rem rgba(0, 0, 0, 0.45);
+}
+
+/* ===================================================
+   COMPANY
+=================================================== */
+
+.card-company {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 1.6rem;
+
+  color: var(--purple-400, #c084fc);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.company-logo {
+  width: auto;
+  height: 2.8rem;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+/* ===================================================
+   TESTIMONIAL TEXT
+=================================================== */
+
+.card-text {
+  margin: 0 0 2.4rem;
+
+  color: var(--blue-gray-700, #334155);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   AUTHOR
+=================================================== */
+
+.card-author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.author-avatar {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.author-name {
+  margin: 0 0 0.2rem;
+
+  color: var(--blue-gray-900, #0f172a);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.author-role {
+  color: var(--purple-400, #c084fc);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+/* ===================================================
+   NAVIGATION CONTROLS
+=================================================== */
+
+.testimonials-controls {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  margin-top: 1rem;
+}
+
+.carousel-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  padding: 0.8rem;
+
+  background: transparent;
+  border: none;
+
+  color: var(--white, #fff);
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-btn:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+.carousel-btn:focus-visible {
+  outline: 0.2rem solid var(--white, #fff);
+  outline-offset: 0.3rem;
+  border-radius: 0.4rem;
+}
+
+/* ===================================================
+   DESKTOP
+=================================================== */
+
+@media (min-width: 768px) {
+  .testimonials-title {
+    font-size: 4.8rem;
+  }
+
+  .testimonial-card {
+    flex-basis: 35rem;
+  }
+
+  .testimonials-cards::before,
+  .testimonials-cards::after {
+    flex-basis: calc(50vw - 20rem);
+  }
+}
+
+/* ===================================================
+   SMALL MOBILE
+=================================================== */
+
+@media (max-width: 480px) {
+  .testimonials {
+    padding: 4rem 2rem;
+  }
+
+  .testimonials-header {
+    margin-bottom: 2.4rem;
+    padding: 0;
+  }
+
+  .testimonials-title {
+    font-size: 2.8rem;
+  }
+
+  .testimonials-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .testimonials-cards {
+    gap: 1.8rem;
+    padding: 2.4rem 0;
+  }
+
+  .testimonials-cards::before,
+  .testimonials-cards::after {
+    flex-basis: calc(50vw - 15rem);
+  }
+
+  .testimonial-card {
+    flex-basis: 30rem;
+    min-height: 30rem;
+    padding: 2.8rem 2rem;
+  }
+
+  .testimonial-card.active {
+    transform: scale(1.04);
+  }
+
+  .card-company {
+    font-size: 1.6rem;
+  }
+
+  .card-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===================================================
+   REDUCE MOTION
+=================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonials-cards {
+    scroll-behavior: auto;
+  }
+
+  .testimonial-card,
+  .carousel-btn {
+    transition: none;
+  }
+}
