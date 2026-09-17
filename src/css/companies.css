@@ -1,0 +1,86 @@
+/* ===================================================
+   COMPANIES SECTION
+=================================================== */
+
+.companies {
+  width: 100%;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+  display: flex;
+  justify-content: center;
+}
+
+.companies-container {
+  width: 100%;
+  max-width: 110rem;
+  text-align: center;
+}
+
+.companies-title {
+  margin: 0 0 3.2rem;
+  color: var(--white, #fff);
+  font-size: 3.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.companies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem 3.2rem;
+}
+
+.company-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--white, #fff);
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  opacity: 0.9;
+}
+
+.company-item img {
+  display: block;
+  width: auto;
+  height: 2.4rem;
+  object-fit: contain;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .companies-title {
+    font-size: 4rem;
+  }
+
+  .companies-grid {
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .companies {
+    padding: 4rem 2rem;
+  }
+
+  .companies-title {
+    margin-bottom: 2.4rem;
+    font-size: 2.8rem;
+  }
+
+  .companies-grid {
+    gap: 1.8rem 2.4rem;
+  }
+
+  .company-item {
+    font-size: 1.6rem;
+  }
+
+  .company-item img {
+    height: 2rem;
+  }
+}

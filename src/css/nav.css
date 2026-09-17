@@ -1,0 +1,242 @@
+nav {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: var(--max-width-nav, 110rem);
+  margin: 1.2rem auto;
+  padding: 0.8rem 1.6rem;
+
+  background-color: var(--blue-gray-800);
+  border-radius: 2rem;
+}
+
+/* ==================================================
+   Logo
+   ================================================== */
+
+nav a {
+  display: inline-block;
+
+  padding: 1rem;
+
+  color: var(--white);
+  text-decoration: none;
+}
+
+nav a.logo {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
+
+/* ==================================================
+   Botão Hambúrguer
+   ================================================== */
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.4rem;
+
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+
+  transition: transform 0.2s ease-in-out;
+}
+
+.menu-toggle:hover {
+  transform: scale(1.05);
+}
+
+.menu-toggle:focus-visible {
+  outline: 0.2rem solid var(--purple-400);
+  outline-offset: 0.3rem;
+  border-radius: 0.4rem;
+}
+
+.menu-toggle img {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+/* ==================================================
+   Menu Mobile
+   ================================================== */
+
+.nav-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  padding: 2rem;
+
+  background-color: var(--blue-gray-800);
+  border-radius: 0 0 2rem 2rem;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.4);
+
+  gap: 2rem;
+}
+
+.nav-menu.active {
+  display: flex;
+}
+
+/* ==================================================
+   Links
+   ================================================== */
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  gap: 1rem;
+
+  list-style: none;
+}
+
+.nav-menu a {
+  padding: 0.8rem 1rem;
+
+  font-size: 1.6rem;
+
+  border-bottom: 0.2rem solid transparent;
+
+  transition:
+    color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+}
+
+.nav-menu a:hover,
+.nav-menu a:focus-visible {
+  color: var(--white);
+  border-bottom-color: var(--purple-400);
+}
+
+.nav-menu a:focus-visible {
+  outline: none;
+}
+
+/* ==================================================
+   Ações
+   ================================================== */
+
+.nav-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  gap: 1.6rem;
+}
+
+.nav-actions .btn-join {
+  width: 100%;
+  max-width: 16rem;
+
+  padding: 1.2rem;
+
+  color: var(--white);
+  background-color: var(--purple-600);
+
+  border: 0;
+  border-radius: 0.8rem;
+
+  cursor: pointer;
+  text-align: center;
+
+  transition:
+    background-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.nav-actions .btn-join:hover {
+  background-color: var(--purple-800);
+  transform: translateY(-0.1rem);
+}
+
+.nav-actions .btn-join:focus-visible {
+  outline: 0.2rem solid var(--purple-400);
+  outline-offset: 0.3rem;
+}
+
+/* ==================================================
+   Desktop - 768px+
+   ================================================== */
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    position: static;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    margin-left: 3.8rem;
+    padding: 0;
+
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    justify-content: flex-start;
+
+    width: auto;
+    gap: 1.6rem;
+  }
+
+  .nav-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+
+    width: auto;
+  }
+
+  .nav-actions .btn-join {
+    width: 12.7rem;
+  }
+}
+
+/* ==================================================
+   Menu aberto no Mobile
+   ================================================== */
+
+@media (max-width: 767px) {
+  nav:has(.nav-menu.active) {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+/* ==================================================
+   Redução de animações
+   ================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle,
+  .nav-menu a,
+  .btn-join {
+    transition: none;
+  }
+}
