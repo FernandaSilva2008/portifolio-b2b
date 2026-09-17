@@ -1,0 +1,212 @@
+/* ===================================================
+   CUSTOMERS / AI KIT SECTION
+   Mobile First
+=================================================== */
+
+.customers {
+  width: 100%;
+  padding: var(--spacing-vertical) var(--spacing-horizontal);
+
+  display: flex;
+  justify-content: center;
+}
+
+.customers-container {
+  width: 100%;
+  max-width: 110rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3.2rem;
+
+  text-align: center;
+}
+
+/* ===================================================
+   IMAGE / ILLUSTRATION
+=================================================== */
+
+.customers-image {
+  width: 100%;
+  max-width: 28rem;
+
+  display: flex;
+  justify-content: center;
+}
+
+.customers-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ===================================================
+   CONTENT
+=================================================== */
+
+.customers-content {
+  width: 100%;
+  max-width: 54rem;
+}
+
+/* ===================================================
+   TAG
+=================================================== */
+
+.customers-tag {
+  display: block;
+  margin: 0 0 1.2rem;
+
+  color: var(--white, #fff);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+/* ===================================================
+   TITLE
+=================================================== */
+
+.customers-title {
+  margin: 0 0 1.6rem;
+
+  color: var(--white, #fff);
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Destaque roxo */
+.customers-title .purple-text {
+  color: var(--purple-400, #c084fc);
+}
+
+/* Destaque rosa */
+.customers-title .pink-box .highlight {
+  display: inline-block;
+  padding: 0 0.4rem;
+
+  background-color: var(--rose, #e11d48);
+  color: var(--white, #fff);
+}
+
+/* ===================================================
+   DESCRIPTION
+=================================================== */
+
+.customers-description {
+  max-width: 48rem;
+  margin: 0 auto 2.4rem;
+
+  color: var(--blue-gray-300, #94a3b8);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   LINK
+=================================================== */
+
+.customers-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  color: var(--white, #fff);
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+
+  transition:
+    gap 0.2s ease,
+    color 0.2s ease;
+}
+
+.customers-link:hover {
+  gap: 1.2rem;
+  color: var(--purple-400, #c084fc);
+}
+
+/* ===================================================
+   DESKTOP
+=================================================== */
+
+@media (min-width: 768px) {
+  .customers {
+    padding: 6rem 2rem;
+  }
+
+  .customers-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6rem;
+
+    text-align: left;
+  }
+
+  /* Texto à esquerda */
+  .customers-content {
+    order: 1;
+    flex: 1;
+    max-width: 60rem;
+  }
+
+  /* Imagem à direita */
+  .customers-image {
+    order: 2;
+    flex: 1;
+    max-width: 38rem;
+    justify-content: flex-end;
+  }
+
+  .customers-title {
+    font-size: 4.8rem;
+  }
+
+  .customers-description {
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 1.6rem;
+  }
+}
+
+/* ===================================================
+   SMALL MOBILE
+=================================================== */
+
+@media (max-width: 480px) {
+  .customers {
+    padding: 4rem 2rem;
+  }
+
+  .customers-container {
+    gap: 2.4rem;
+  }
+
+  .customers-image {
+    max-width: 24rem;
+  }
+
+  .customers-tag {
+    font-size: 1.6rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .customers-title {
+    font-size: 2.8rem;
+  }
+
+  .customers-description {
+    font-size: 1.4rem;
+  }
+
+  .customers-link {
+    font-size: 1.5rem;
+  }
+}
